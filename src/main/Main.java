@@ -2,6 +2,7 @@ package main;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+
 import main.Vehicle;
 import main.Car;
 import main.Motorcycle;
@@ -14,6 +15,18 @@ public class Main {
 	ArrayList<Vehicle> vhcData = new ArrayList<>();
 
 	int input;
+	int chooseMenu;
+	String vehicle;
+	String brand;
+	String name;
+	String license = "";
+	int topSpeed;
+	int gasCap;
+	int wheel;
+	String type;
+	int entSys;
+	int helm;
+	int helmPrice;
 
 	public Main() {
 
@@ -21,8 +34,6 @@ public class Main {
 	}
 
 	public void Menu() {
-
-		int chooseMenu;
 
 		do {
 			System.out.println("Menu");
@@ -50,17 +61,6 @@ public class Main {
 	}
 
 	public void Input() {
-
-		String vehicle;
-		String brand;
-		String name;
-		String license = "";
-		int topSpeed;
-		int gasCap;
-		int wheel;
-		String type;
-		int entSys;
-		int helm;
 
 		do {
 			System.out.print("Input type [Car | Motorcycle]: ");
@@ -279,7 +279,10 @@ public class Main {
 						System.out.println("Top Speed: " + vhcData.get(input).getTopSpeed());
 						System.out.println("Wheel(s): " + vhcData.get(input).getWheel());
 						System.out.println("Entertainment System: " + vhcData.get(input).getEntSys());
-						
+						if (vhcData.get(input) instanceof Car) {
+							Car view = (Car) vhcData.get(input);
+							view.View();
+						}
 					} else if (vhcType.get(input).equalsIgnoreCase("Motorcycle")) {
 						System.out.println("Brand: " + vhcData.get(input).getBrand());
 						System.out.println("Name: " + vhcData.get(input).getName());
@@ -289,6 +292,22 @@ public class Main {
 						System.out.println("Top Speed: " + vhcData.get(input).getTopSpeed());
 						System.out.println("Wheel(s): " + vhcData.get(input).getWheel());
 						System.out.println("Helm: " + vhcData.get(input).getHelm());
+						if (vhcData.get(input) instanceof Motorcycle) {
+							Motorcycle view = (Motorcycle) vhcData.get(input);
+							view.View();
+						}
+
+						do {
+							System.out.print("Input helm price: ");
+							try {
+								helmPrice = scan.nextInt();
+							} catch (Exception e) {
+								helmPrice = 404;
+							}
+							scan.nextLine();
+						} while (helmPrice < 1);
+
+						System.out.println("Price: " + helmPrice);
 					}
 
 				}

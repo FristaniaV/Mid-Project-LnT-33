@@ -39,5 +39,13 @@ public class Car extends Vehicle {
 	public int getHelm() {
 		return 0;
 	}
+	
+	public void View() {
+		if (vhcData.get(input).getType().equalsIgnoreCase("Supercar")) {
+			System.out.println("Boosting!");
+		} else {
+			System.out.println("Turning on entertainment system...");
+		}
+	}
 
 }

@@ -57,17 +57,10 @@ public abstract class Vehicle extends Main {
 
 	public abstract int getHelm();
 	
-	public void CarView() {
-		if (vhcData.get(input).getType().equalsIgnoreCase("Supercar")) {
-			System.out.println("Boosting!");
-		} else {
-			System.out.println("Turning on entertainment system...");
-		}
+	public void View() {
+
 	}
 	
-	public void MotorView() {
-		System.out.println(vhcData.get(input).getName() + " is standing!");
-	}
 	
 //	public String compareTo(Vehicle compareVehicle) {
 //		

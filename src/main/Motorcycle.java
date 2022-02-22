@@ -40,4 +40,7 @@ public class Motorcycle extends Vehicle {
 		return helm;
 	}
 
+	public void View() {
+		System.out.println(vhcData.get(input).getName() + " is standing!");
+	}
 }
