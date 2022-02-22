@@ -2,61 +2,42 @@ package main;
 
 public class Motorcycle extends Vehicle {
 
-	@Override
-	public void license() {
-
-		
-		
-		licenseList.add(license);
-		
+	String license;
+	int topSpeed;
+	int gasCap;
+	int helm;
+	
+	public Motorcycle (String brand, String name, int wheel, String type, String license, int topSpeed, int gasCap, int helm) {
+		super(brand, name, wheel, type);
+		this.license = license;
+		this.topSpeed = topSpeed;
+		this.gasCap = gasCap;
+		this.helm = helm;
 	}
 
 	@Override
-	public void topSpeed() {
-		
-		do {
-			System.out.println("Input top speed [ 100 <= topSpeed <= 250]: ");
-			try {
-				topSpeed = scan.nextInt();
-			} catch (Exception e) {
-				topSpeed = 404;
-			} scan.nextLine();
-		} while (topSpeed < 100 || topSpeed > 250);
-		
-		topSpeedList.add(topSpeed);
+	public String getLicense() {
+		return license;
 	}
 
 	@Override
-	public void gasCap() {
-		
-		do {
-			System.out.println("Input gas capacity [30 <= gasCap <= 60]: ");
-			try {
-				gasCap = scan.nextInt();
-			} catch (Exception e) {
-				gasCap = 404;
-			} scan.nextLine();
-		} while (gasCap < 30 || gasCap > 60);
-		
-		gasCapList.add(gasCap);
-		
+	public int getTopSpeed() {
+		return topSpeed;
 	}
 
 	@Override
-	public void entSys() {
-
-		do {
-			System.out.println("Input helm amount [>= 1]: ");
-			try {
-				helm = scan.nextInt();
-			} catch (Exception e) {
-				helm = 404;
-			} scan.nextLine();
-		} while (helm < 1);
-		
-		helmList.add(helm);
+	public int getGasCap() {
+		return gasCap;
 	}
 
+	@Override
+	public int getEntSys() {
+		return 0;
+	}
 
+	@Override
+	public int getHelm() {
+		return helm;
+	}
 
 }
